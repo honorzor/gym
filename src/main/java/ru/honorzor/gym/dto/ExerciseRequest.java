@@ -8,8 +8,6 @@ import ru.honorzor.gym.enums.LevelType;
 import ru.honorzor.gym.enums.SexType;
 
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 @Builder
 public class ExerciseRequest {
 

@@ -1,7 +1,6 @@
 package ru.honorzor.gym.entity;
 
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.lang.NonNull;
 import ru.honorzor.gym.enums.LevelType;
 import ru.honorzor.gym.enums.MuscleType;
@@ -12,7 +11,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "T_EXERCISE")
 @Builder
-@NoArgsConstructor
+@Getter
+@Setter
 public class Exercise {
 
     @Id

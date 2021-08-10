@@ -30,24 +30,24 @@ public class ExerciseServiceTest {
     @BeforeEach
     void beforeEach() {
         Mockito.when(exerciseRepository.findAllByMuscleInAndLevelAndSex(
-                        Mockito.any(),
-                        Mockito.any(),
-                        Mockito.any()))
+                Mockito.any(),
+                Mockito.any(),
+                Mockito.any()))
                 .thenReturn(List.of(
                         Exercise.builder()
-                                .description("PODEM SHTANGI")
+                                .name("1")
                                 .muscle(MuscleType.BICEPS)
                                 .build(),
                         Exercise.builder()
-                                .description("GANTELI")
+                                .name("2")
                                 .muscle(MuscleType.BICEPS)
                                 .build(),
                         Exercise.builder()
-                                .description("Jim leja")
+                                .name("3")
                                 .muscle(MuscleType.CHEST)
                                 .build(),
                         Exercise.builder()
-                                .description("Ganteli")
+                                .name("4")
                                 .muscle(MuscleType.CHEST)
                                 .build()
                 ));
@@ -56,9 +56,7 @@ public class ExerciseServiceTest {
     @Test
     public void shouldReturnOneExerciseForMuscleGroup() {
         final List<Exercise> byMuscleTypeAndLevelTypeAndSexType = exerciseService.findByMuscleTypeAndLevelTypeAndSexType(
-                List.of(
-                        MuscleType.BICEPS, MuscleType.CHEST
-                ),
+                List.of(MuscleType.BICEPS, MuscleType.CHEST),
                 LevelType.EASY,
                 SexType.MALE
         );

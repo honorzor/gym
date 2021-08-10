@@ -7,8 +7,8 @@ import ru.honorzor.gym.enums.LevelType;
 import ru.honorzor.gym.enums.MuscleType;
 import ru.honorzor.gym.enums.SexType;
 import ru.honorzor.gym.repository.ExerciseRepository;
+import ru.honorzor.gym.utils.ExerciseUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,18 +28,6 @@ public class ExerciseService {
                 sexType
         );
 
-        final List<Exercise> all = new ArrayList<>();
-
-        muscleTypes.forEach(muscleType -> {
-            final Exercise exercise = allByMuscleInAndLevelAndSex.stream()
-                    .filter(e -> e.getMuscle() == muscleType)
-                    .findAny()
-                    .orElseThrow();
-
-            all.add(exercise);
-        });
-
-
-        return all;
+        return ExerciseUtil.distinctByMuscle(allByMuscleInAndLevelAndSex);
     }
 }

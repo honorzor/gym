@@ -2,13 +2,14 @@ package ru.honorzor.gym.utils;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 import ru.honorzor.gym.entity.Exercise;
 import ru.honorzor.gym.enums.MuscleType;
 
 import java.util.List;
 
+@ActiveProfiles("test")
 class ExerciseUtilTest {
-
 
     @Test
     public void shouldBeDistinctByMuscleType() {

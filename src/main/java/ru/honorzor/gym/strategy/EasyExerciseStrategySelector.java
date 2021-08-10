@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.honorzor.gym.dto.ExerciseRequest;
 import ru.honorzor.gym.entity.Exercise;
+import ru.honorzor.gym.enums.LevelType;
 import ru.honorzor.gym.enums.MuscleType;
 import ru.honorzor.gym.service.ExerciseService;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class LowExerciseStrategySelector implements ExerciseStrategySelector {
+public class EasyExerciseStrategySelector implements ExerciseStrategySelector {
 
     private final ExerciseService exerciseService;
 
@@ -26,5 +27,10 @@ public class LowExerciseStrategySelector implements ExerciseStrategySelector {
                 request.getLevel(),
                 request.getSex()
         );
+    }
+
+    @Override
+    public LevelType getLevelType() {
+        return LevelType.EASY;
     }
 }

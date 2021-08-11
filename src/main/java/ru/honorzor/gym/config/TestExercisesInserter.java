@@ -1,6 +1,7 @@
 package ru.honorzor.gym.config;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import ru.honorzor.gym.entity.Exercise;
 import ru.honorzor.gym.enums.LevelType;
@@ -12,7 +13,7 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Component
-//@Profile("test")
+@Profile({"test"})
 @RequiredArgsConstructor
 public class TestExercisesInserter {
     private final ExerciseRepository exerciseRepository;

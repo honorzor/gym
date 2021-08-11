@@ -13,6 +13,8 @@ import javax.persistence.*;
 @Builder
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Exercise {
 
     @Id
@@ -30,5 +32,6 @@ public class Exercise {
     @Enumerated(value = EnumType.STRING)
     private LevelType level;
 
+    @Enumerated(value = EnumType.STRING)
     private MuscleType muscle;
 }

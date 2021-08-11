@@ -1,12 +1,14 @@
 package ru.honorzor.gym.dto;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import ru.honorzor.gym.enums.LevelType;
 import ru.honorzor.gym.enums.SexType;
 
-@Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class ExerciseRequest {
 
     private SexType sex;
